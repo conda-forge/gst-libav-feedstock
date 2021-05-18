@@ -1,0 +1,18 @@
+c_compiler:
+- vs2017
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2017
+ffmpeg:
+- '4.3'
+glib:
+- '2'
+gst_plugins_base:
+- '1.18'
+gstreamer:
+- '1.18'
+target_platform:
+- win-64
