@@ -1,0 +1,29 @@
+--- a/meson.build	2021-05-18 17:25:26.402893300 +0200
++++ b/meson.build	2021-05-19 10:30:26.701998200 +0200
+@@ -15,20 +15,16 @@
+   gst_version_nano = 0
+ endif
+ 
++cc = meson.get_compiler('c')
++
+ api_version = '1.0'
+-libavfilter_dep = dependency('libavfilter', version: '>= 7.16.100',
+-  fallback: ['FFmpeg', 'libavfilter_dep'])
+-libavformat_dep = dependency('libavformat', version: '>= 58.12.100',
+-  fallback: ['FFmpeg', 'libavformat_dep'])
+-libavcodec_dep = dependency('libavcodec', version: '>= 58.18.100',
+-  fallback: ['FFmpeg', 'libavcodec_dep'])
+-libavutil_dep = dependency('libavutil', version: '>= 56.14.100',
+-  fallback: ['FFmpeg', 'libavutil_dep'])
++libavfilter_dep = declare_dependency(dependencies: [cc.find_library('avfilter')])
++libavformat_dep = declare_dependency(dependencies: [cc.find_library('avformat')])
++libavcodec_dep = declare_dependency(dependencies: [cc.find_library('avcodec')])
++libavutil_dep = declare_dependency(dependencies: [cc.find_library('avutil')])
+ 
+ libav_deps = [libavfilter_dep, libavformat_dep, libavcodec_dep, libavutil_dep]
+ 
+-cc = meson.get_compiler('c')
+-
+ check_ffmpeg_src = '''#include <libavcodec/avcodec.h>
+ #if LIBAVCODEC_VERSION_MICRO >= 100
+ /* FFmpeg uses 100+ as its micro version */
