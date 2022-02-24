@@ -5,8 +5,8 @@ mkdir -p build
 pushd build
 
 meson_options=(
-      -Dexamples=disabled
-      -Dtests=disabled
+#      -Dexamples=disabled
+#      -Dtests=disabled
 )
 
 meson --prefix=${PREFIX} \
