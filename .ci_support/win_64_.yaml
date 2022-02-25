@@ -14,5 +14,10 @@ gst_plugins_base:
 - '1.18'
 gstreamer:
 - '1.20'
+pin_run_as_build:
+  zlib:
+    max_pin: x.x
 target_platform:
 - win-64
+zlib:
+- '1.2'
