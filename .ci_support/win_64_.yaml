@@ -1,7 +1,7 @@
 c_compiler:
 - vs2017
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -13,6 +13,6 @@ glib:
 gst_plugins_base:
 - '1.18'
 gstreamer:
-- '1.18'
+- '1.20'
 target_platform:
 - win-64
