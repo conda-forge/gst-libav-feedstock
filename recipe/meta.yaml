@@ -29,6 +29,7 @@ requirements:
     - gstreamer
     - gst-plugins-base
     - glib
+    - zlib  # [win] # required for it to find z.lib for some reason
 
 test:
   commands:
