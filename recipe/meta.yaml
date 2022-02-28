@@ -26,10 +26,13 @@ requirements:
     - {{ posix }}patch  # [win]
   host:
     - ffmpeg
-    - gstreamer
-    - gst-plugins-base
+    - gstreamer {{ gstreamer }}
+    - gst-plugins-base {{ gstreamer }}
     - glib
     - zlib  # [win] # required for it to find z.lib for some reason
+  run:
+    - {{ pin_compatible('gstreamer') }}
+    - {{ pin_compatible('gst-plugins-base') }}
 
 test:
   commands:
