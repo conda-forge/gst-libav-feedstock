@@ -1,11 +1,11 @@
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
 ffmpeg:
 - '4.4'
 glib:
@@ -14,9 +14,6 @@ gst_plugins_base:
 - '1.20'
 gstreamer:
 - '1.20'
-pin_run_as_build:
-  zlib:
-    max_pin: x.x
 target_platform:
 - win-64
 zlib:
