@@ -29,7 +29,9 @@ requirements:
     - gstreamer
     - gst-plugins-base
     - glib
-    - zlib  # [win] # required for it to find z.lib for some reason
+    # Needed for gstreamer-audio-1.0 dependency?
+    # Not sure why, zlib should be a private dependency
+    - zlib
 
 test:
   commands:
