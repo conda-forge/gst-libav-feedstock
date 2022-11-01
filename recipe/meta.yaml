@@ -13,7 +13,7 @@ source:
     - ffmpeg-win.patch  # [win]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [osx]
 
 requirements:
