@@ -18,10 +18,6 @@ ffmpeg:
 - '5'
 glib:
 - '2'
-gst_plugins_base:
-- '1.21'
-gstreamer:
-- '1.21'
 target_platform:
 - linux-ppc64le
 zip_keys:
