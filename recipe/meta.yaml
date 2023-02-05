@@ -1,5 +1,6 @@
 {% set name = "gst-libav" %}
 {% set version = "1.22.0" %}
+{% set version_major_minor = ".".join(version.split(".")[:2]) %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -26,8 +27,8 @@ requirements:
     - {{ posix }}patch  # [win]
   host:
     - ffmpeg
-    - gstreamer
-    - gst-plugins-base
+    - gstreamer         {{ version_major_minor }}
+    - gst-plugins-base  {{ version_major_minor }}
     - glib
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
