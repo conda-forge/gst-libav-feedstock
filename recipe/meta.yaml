@@ -1,5 +1,6 @@
 {% set name = "gst-libav" %}
-{% set version = "1.21.3" %}
+{% set version = "1.22.0" %}
+{% set version_major_minor = ".".join(version.split(".")[:2]) %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -8,13 +9,17 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-{{ version }}.tar.xz
-  sha256: e529646d020054244bf90e5903ffafd6231843d6037d97cce9e23207e6f45fd9
+  sha256: 0e48407b4905227a260213dbda84cba3812f0530fc7a75b43829102ef82810f1
   patches:
     - ffmpeg-win.patch  # [win]
 
 build:
   number: 0
   skip: true  # [osx]
+  run_exports:
+    # remove symbols at .90 patch releases just before minor versions?
+    #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
+    - {{ pin_subpackage('gst-libav', max_pin='x.x') }}
 
 requirements:
   build:
@@ -26,8 +31,8 @@ requirements:
     - {{ posix }}patch  # [win]
   host:
     - ffmpeg
-    - gstreamer
-    - gst-plugins-base
+    - gstreamer         {{ version_major_minor }}
+    - gst-plugins-base  {{ version_major_minor }}
     - glib
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
