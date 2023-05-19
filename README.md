@@ -1,11 +1,11 @@
-About gst-libav
-===============
+About gst-libav-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gst-libav-feedstock/blob/main/LICENSE.txt)
 
 Home: http://gstreamer.freedesktop.org/
 
 Package license: LGPL-2.1-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gst-libav-feedstock/blob/main/LICENSE.txt)
 
 Summary: GStreamer plugin for the FFmpeg libav* libraries
 
