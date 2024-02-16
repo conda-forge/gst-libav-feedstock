@@ -1,5 +1,5 @@
 {% set name = "gst-libav" %}
-{% set version = "1.22.9" %}
+{% set version = "1.23.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-{{ version }}.tar.xz
-  sha256: 192f7d27d21c1e7c72c339a2647a9b0c247fedc62ea5029115f8c3e22ebb87d8
+  sha256: e9e805af3bc60158b309a8427a5d5379d75d479a3f42c08b531183341911e646
   patches:
     - ffmpeg-win.patch  # [win]
 
