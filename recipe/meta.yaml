@@ -1,5 +1,5 @@
 {% set name = "gst-libav" %}
-{% set version = "1.22.9" %}
+{% set version = "1.24.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-{{ version }}.tar.xz
-  sha256: 192f7d27d21c1e7c72c339a2647a9b0c247fedc62ea5029115f8c3e22ebb87d8
+  sha256: 549b7821fb5a4c866d6197888496015106cc6ec96ffb12a64e6efa91aa6562fd
   patches:
     - ffmpeg-win.patch  # [win]
 
@@ -37,6 +37,9 @@ requirements:
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
     - zlib
+  run:
+    # We want to pin harder than the run_export from gstreamer
+    - gstreamer         {{ version }}
 
 test:
   commands:
