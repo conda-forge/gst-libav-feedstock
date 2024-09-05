@@ -8,7 +8,6 @@ meson --prefix=${PREFIX} \
       --buildtype=release \
       --libdir=$PREFIX/lib \
       --wrap-mode=nofallback \
-      -Dexamples=disabled
       -Dtests=disabled
       ..
 ninja -j${CPU_COUNT}
