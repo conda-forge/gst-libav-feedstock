@@ -8,7 +8,8 @@ meson --prefix=${PREFIX} \
       --buildtype=release \
       --libdir=$PREFIX/lib \
       --wrap-mode=nofallback \
-      -Dtests=disabled
+      -Dtests=disabled \
+      -Ddoc=disabled \
       ..
 ninja -j${CPU_COUNT}
 ninja install
