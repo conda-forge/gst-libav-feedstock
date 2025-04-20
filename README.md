@@ -191,6 +191,3 @@ Feedstock Maintainers
 * [@kuepe-sl](https://github.com/kuepe-sl/)
 * [@scopatz](https://github.com/scopatz/)
 
-
-<!-- dummy commit to enable rerendering -->
-
