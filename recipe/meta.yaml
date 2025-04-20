@@ -1,9 +1,7 @@
-{% set name = "gst-libav" %}
 {% set version = "1.24.11" %}
-{% set posix = 'm2-' if win else '' %}
 
 package:
-  name: {{ name|lower }}
+  name: gst-libav
   version: {{ version }}
 
 source:
@@ -28,7 +26,7 @@ requirements:
     - meson
     - ninja
     - pkg-config
-    - {{ posix }}patch  # [win]
+    - m2-patch  # [win]
   host:
     - ffmpeg
     - gstreamer         {{ version }}
