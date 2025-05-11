@@ -11,8 +11,7 @@ source:
     - ffmpeg-win.patch  # [win]
 
 build:
-  number: 1
-  skip: true  # [osx]
+  number: 2
   run_exports:
     # remove symbols at .90 patch releases just before minor versions?
     #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
