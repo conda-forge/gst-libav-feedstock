@@ -6,7 +6,6 @@ pushd build
 
 meson --prefix=${PREFIX} \
       --buildtype=release \
-      --libdir=$PREFIX/lib \
       --wrap-mode=nofallback \
       -Dtests=disabled \
       -Ddoc=disabled \
