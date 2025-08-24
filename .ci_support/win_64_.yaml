@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2022
 ffmpeg:
-- '7'
+- '8'
 glib:
 - '2'
 target_platform:
