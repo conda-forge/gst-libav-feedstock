@@ -38,7 +38,7 @@ requirements:
   run:
     # We want to pin harder than the run_export from gstreamer
     - gstreamer         {{ version }}
-
+    - lame    # [win]
 test:
   commands:
     - test -f ${PREFIX}/lib/gstreamer-1.0/libgstlibav${SHLIB_EXT}  # [not win]
