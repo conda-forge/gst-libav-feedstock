@@ -1,4 +1,4 @@
-{% set version = "1.26.3" %}
+{% set version = "1.26.6" %}
 
 package:
   name: gst-libav
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-{{ version }}.tar.xz
-  sha256: 3ada7e50a3b9b8ba3e405b14c4021e25fbb10379f77d2ce490aa16523ed2724d
+  sha256: 6e50a6222d509c52b19143f9a7bd3581e22c745d0c4bc27ddb07e1229bcc11b8
   patches:
     - ffmpeg-win.patch  # [win]
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # remove symbols at .90 patch releases just before minor versions?
     #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
