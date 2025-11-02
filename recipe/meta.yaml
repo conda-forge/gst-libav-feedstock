@@ -32,9 +32,11 @@ requirements:
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
     - zlib
+    - xz
   run:
     # We want to pin harder than the run_export from gstreamer
     - gstreamer         {{ version }}
+    - xz
 
 test:
   commands:
