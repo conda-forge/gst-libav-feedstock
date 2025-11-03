@@ -23,8 +23,9 @@ requirements:
     - meson
     - ninja
     - pkg-config
-    - m2-patch  # [win]
+    - m2-patch       # [win]
   host:
+    - setuptools <81
     - ffmpeg
     - gstreamer         {{ version }}
     - gst-plugins-base  {{ version }}
@@ -32,10 +33,17 @@ requirements:
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
     - zlib
+    - expat          # [win]
+    - liblzma-devel  # [win]
+    - x265           # [win]
+    - libxml2 =2.13       # [win]
+
   run:
     # We want to pin harder than the run_export from gstreamer
     - gstreamer         {{ version }}
-
+    - expat          # [win]
+    - liblzma-devel  # [win]
+    - libxml2 =2.13       # [win]
 test:
   commands:
     - test -f ${PREFIX}/lib/gstreamer-1.0/libgstlibav${SHLIB_EXT}  # [not win]
