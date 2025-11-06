@@ -22,3 +22,7 @@ ninja -C builddir install -j %CPU_COUNT%
 if errorlevel 1 exit 1
 
 del %LIBRARY_PREFIX%\bin\*.pdb
+del %LIBRARY_LIB%\mp3lame.lib
+del %LIBRARY_LIB%\x265.lib
+del %LIBRARY_LIB%\bz2.lib
+del %LIBRARY_LIB%\xml2.lib
