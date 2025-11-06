@@ -18,10 +18,14 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+expat:
+- '2'
 ffmpeg:
 - '8'
 glib:
 - '2'
+liblzma_devel:
+- '5'
 macos_machine:
 - arm64-apple-darwin20.0.0
 target_platform:
