@@ -1,4 +1,4 @@
-{% set version = "1.26.6" %}
+{% set version = "1.26.8" %}
 
 package:
   name: gst-libav
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-{{ version }}.tar.xz
-  sha256: 6e50a6222d509c52b19143f9a7bd3581e22c745d0c4bc27ddb07e1229bcc11b8
+  sha256: d8610d88026cc4927eb013e46ecf505f73ee946ec8b8fd5aee5b3ae4614a5d59
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # remove symbols at .90 patch releases just before minor versions?
     #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
@@ -33,16 +33,16 @@ requirements:
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
     - zlib
-    - expat          
-    - liblzma-devel  
+    - expat
+    - liblzma-devel
     - x265                # [win]
     - libxml2 =2.13       # [win]
 
   run:
     # We want to pin harder than the run_export from gstreamer
     - gstreamer         {{ version }}
-    - expat          
-    - liblzma-devel  
+    - expat
+    - liblzma-devel
     - libxml2 =2.13       # [win]
 test:
   commands:
