@@ -9,7 +9,7 @@ source:
   sha256: 08a8e944fc61ef26df515784a089c8ac41765304a5d55b98199835b28a98dbdf
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # remove symbols at .90 patch releases just before minor versions?
     #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
@@ -36,14 +36,14 @@ requirements:
     - expat
     - liblzma-devel
     - x265                # [win]
-    - libxml2 =2.13       # [win]
+    - libxml2-devel =2.13       # [win]
 
   run:
     # We want to pin harder than the run_export from gstreamer
     - gstreamer         {{ version }}
     - expat
     - liblzma-devel
-    - libxml2 =2.13       # [win]
+    - libxml2-devel =2.13       # [win]
 test:
   commands:
     - test -f ${PREFIX}/lib/gstreamer-1.0/libgstlibav${SHLIB_EXT}  # [not win]
