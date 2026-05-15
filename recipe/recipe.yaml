@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.28.2"
+  version: "1.28.3"
 
 package:
   name: gst-libav
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-${{ version }}.tar.xz
-  sha256: 45ba65535870aa7c026119d2e90b35dc760e1cf6f50bffbfe8d71223a3043a4e
+  sha256: 28fcd45d9ace261d4bda896466d5326af6efd2fcf0a20f24502094b5a9955bdf
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -27,8 +27,8 @@ requirements:
   host:
     - setuptools <81
     - ffmpeg
-    - gstreamer         1.28.2.*
-    - gst-plugins-base  1.28.2.*
+    - gstreamer        == ${{ version }}
+    - gst-plugins-base  ==${{ version }}
     - glib
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
@@ -36,12 +36,12 @@ requirements:
     - expat
     - liblzma-devel
     - if: win
-      then: x265
-    - if: win
-      then: libxml2-devel
+      then:
+        - x265
+        - libxml2-devel
   run:
     # We want to pin harder than the run_export from gstreamer
-    - gstreamer         1.28.2.*
+    - gstreamer         ==${{ version }}
     - expat
     - if: win
       then: libxml2-devel
@@ -52,8 +52,7 @@ tests:
   - script:
       - if: not win
         then: test -f ${PREFIX}/lib/gstreamer-1.0/libgstlibav${SHLIB_EXT}
-      - if: win
-        then: if not exist %LIBRARY_LIB%\\gstreamer-1.0\\gstlibav.dll exit 1
+        else: if not exist %LIBRARY_LIB%\\gstreamer-1.0\\gstlibav.dll exit 1
       - gst-inspect-1.0 --plugin libav
 
 about:
