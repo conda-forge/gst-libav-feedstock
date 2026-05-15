@@ -28,7 +28,7 @@ requirements:
     - setuptools <81
     - ffmpeg
     - gstreamer        == ${{ version }}
-    - gst-plugins-base  1.28.2.*
+    - gst-plugins-base  ==${{ version }}
     - glib
     # Needed for gstreamer-audio-1.0 dependency?
     # Not sure why, zlib should be a private dependency
