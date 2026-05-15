@@ -27,7 +27,7 @@ requirements:
   host:
     - setuptools <81
     - ffmpeg
-    - gstreamer         1.28.2.*
+    - gstreamer        == ${{ version }}
     - gst-plugins-base  1.28.2.*
     - glib
     # Needed for gstreamer-audio-1.0 dependency?
