@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.28.8"
+  version: "1.28.9"
 
 package:
   name: gst-libav
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-${{ version }}.tar.xz
-  sha256: 98ad3d7f8932c495e268708903f1c3388d5f26a0db34727a9f861ee23b724177
+  sha256: 4b3df21fa70972a80891d2298cf32c14a62c3db4483d545c7ac018230399186b
 
 build:
   number: 0
